@@ -1,69 +1,69 @@
-🛍️ Mini E-Commerce Frontend
+# 🛍️ Mini E-Commerce Frontend
 
 Frontend for a Mini E-Commerce application built using Vite + React + TypeScript.
 This project implements authentication, product listing, cart management, and a fully responsive UI.
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Jainam Panchal
 
-🚀 Tech Stack
+## 🚀 Tech Stack
 
-⚛️ React (with TypeScript)
+- ⚛️ React (with TypeScript)
 
-⚡ Vite
+- ⚡ Vite
 
-🎨 CSS / Responsive Design
+- 🎨 CSS / Responsive Design
 
-🔐 JWT Authentication
+- 🔐 JWT Authentication
 
-🔔 Toast Notifications for API Errors
+- 🔔 Toast Notifications for API Errors
 
-🛒 Cart Management
+## ✨ Features
 
-✨ Features
-🔐 Authentication (JWT Based)
+- 🔐 Authentication (JWT Based)
 
-User Registration
+- User Registration
 
-User Login
+- User Login
 
-JWT token storage
+- JWT token storage
 
-Protected routes
+- Protected routes
 
-Only authenticated users can add items to cart
+- Only authenticated users can add items to cart
 
-🛍️ Product Listing
+## 🛍️ Product Listing
 
-Grid-based product layout
+- Grid-based product layout
 
-Responsive product cards
+- Responsive product cards
 
-Dynamic rendering from API
+- Dynamic rendering from API
+  API
 
-🛒 Cart Page
+## 🛒 Cart Page
 
-Add to cart (Authenticated users only)
+- Add to cart (Authenticated users only)
 
-View added products
+- View added products
 
-Cart state management
+- Cart state management
 
-⚠️ API Error Handling
+## ⚠️ API Error Handling
 
-Toast notifications for:
+- Toast notifications for:
 
-Login/Register errors
+- Login/Register errors
 
-API failures
+- API failures
 
-Unauthorized access
+- Unauthorized access
 
-📱 Responsive UI
+## 📱 Responsive UI
 
-Mobile-friendly design
+- Mobile-friendly design
 
-Tablet and Desktop compatibility
+- Tablet and Desktop compatibility
 
-Clean and modern layout
+- Clean and modern layout
