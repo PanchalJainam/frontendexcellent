@@ -11,7 +11,7 @@ const token=localStorage.getItem("token") ;
 const axiosHeaders=axios.create({
    baseURL: import.meta.env.VITE_BASE_URL,
    headers:{
-    Authorization:`Bearer ${(token)}`
+    Authorization:`Bearer ${token}`
    }
 })
 

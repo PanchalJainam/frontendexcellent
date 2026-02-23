@@ -27,8 +27,7 @@ const Product = () => {
 
     const dispatch = useDispatch();
 
-    const token = JSON.parse(JSON.stringify(localStorage.getItem("token")));
-
+    const token = localStorage.getItem("token");
 
     const fetchProductData = async () => {
         try {
@@ -70,7 +69,6 @@ const Product = () => {
         try {
             const res = await cartFetch();
             dispatch(addCart(res?.data?.data));
-
         } catch (error) {
             console.log(error)
         }
@@ -78,7 +76,9 @@ const Product = () => {
 
     useEffect(() => {
         fetchProductData();
-        fetchCartData();
+        if (token) {
+            fetchCartData();
+        }
     }, [])
 
 
@@ -129,7 +129,6 @@ const Product = () => {
                         </div>
 
                         <div className='md:col-span-10'>
-
                             <div className='flex gap-2 item-center justify-center w-60 border-2 border-gray-200 rounded mb-5 px-4 py-2'>
                                 <div><i className="fa-solid fa-magnifying-glass text-sm"></i></div>
                                 <input className='outline-none focus:outline-none text-[#183153] w-full' type="text" name="search" value={search} placeholder='Search products' onChange={(e) => setSearch(e.target.value)} />
