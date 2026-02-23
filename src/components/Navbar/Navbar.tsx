@@ -37,7 +37,7 @@ const Navbar = () => {
                     </Link>
                     <Link to="/cart">
                         <li className='cursor-pointer relative'>Cart
-                            <div className='absolute w-5 h-5 -top-2 -right-5 rounded-full bg-blue-500 text-white text-sm flex items-center justify-center'>
+                            <div className='absolute w-5 h-5 -top-2 -right-5 rounded-full bg-[#183153] text-white text-sm flex items-center justify-center'>
                                 {cartTotal}
                             </div>
 
@@ -47,9 +47,9 @@ const Navbar = () => {
             </nav>
             {
                 isAuthenticated ?
-                    <div className='felx gap-1.5 text-[#183153] items-center bg-gray-200 rounded px-2'>
+                    <div className='felx gap-1.5 text-[#183153] items-center bg-gray-200 rounded px-2' onClick={handleLogout}>
                         <i className="fa-solid fa-arrow-right-from-bracket"></i>
-                        <button className='w-fit  px-2 py-2 ' onClick={handleLogout}>
+                        <button className='w-fit  px-2 py-2 '>
                             Logout
                         </button> </div> : <button className='w-fit bg-gray-200 rounded px-5 py-2'>
                         <Link to="/login">

@@ -1,29 +1,32 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Navbar from '../components/Navbar/Navbar'
-import Product from '../pages/Product'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Cart from '../pages/Cart'
+const Navbar = React.lazy(() => import("../components/Navbar/Navbar"))
+const Product = React.lazy(() => import("../pages/Product"))
+const Login = React.lazy(() => import("../pages/Login"));
+const Register = React.lazy(() => import("../pages/Register"));
+const Cart = React.lazy(() => import("../pages/Cart"))
+const Payment = React.lazy(() => import("../pages/Payment"))
+const Loader = React.lazy(() => import("../components/Loader/Loader"))
 import { Toaster } from 'react-hot-toast'
-import Payment from '../pages/Payment'
 import { AuthProvider } from '../context/AuthProvider'
 
 const Routers = () => {
     return (
         <div>
             <BrowserRouter>
-                <AuthProvider>
-                    <Navbar />
-                    <Routes>
-                        <Route path="/" element={<Product />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/cart" element={<Cart />} />
-                        <Route path="/payment" element={<Payment />} />
-                    </Routes>
-                </AuthProvider>
-                <Toaster />
+                <Suspense fallback={<Loader />}>
+                    <AuthProvider>
+                        <Navbar />
+                        <Routes>
+                            <Route path="/" element={<Product />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/cart" element={<Cart />} />
+                            <Route path="/payment" element={<Payment />} />
+                        </Routes>
+                    </AuthProvider>
+                    <Toaster />
+                </Suspense>
             </BrowserRouter>
         </div>
     )

@@ -7,6 +7,14 @@ This project implements authentication, product listing, cart management, and a 
 
 Jainam Panchal
 
+## Set .env
+
+set below variable in env file
+
+```bash
+VITE_BASE_URL = <BACKEND_END_POINT>
+```
+
 ## 🚀 Tech Stack
 
 - ⚛️ React (with TypeScript)

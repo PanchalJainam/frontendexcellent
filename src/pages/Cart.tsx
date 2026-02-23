@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { addCart } from '../redux/slice/cartSlice';
 import { useDispatch } from 'react-redux';
 import Loader from '../components/Loader/Loader';
+import { useAuth } from '../context/AuthProvider';
 
 interface cartTypes {
     user: string;
@@ -20,6 +21,7 @@ const Cart = () => {
     const [cancelModal, setCancelModal] = useState(false);
     const [productId, setProductId] = useState("")
     const dispatch = useDispatch();
+    const { isAuthenticated } = useAuth()
 
 
     const fetchCartData = async () => {
@@ -40,7 +42,11 @@ const Cart = () => {
     }
 
     useEffect(() => {
-        fetchCartData();
+        if (isAuthenticated) {
+            fetchCartData();
+        } else {
+            toast.error("User must be login to access car page");
+        }
     }, [])
 
 
